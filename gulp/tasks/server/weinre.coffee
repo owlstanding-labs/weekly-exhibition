@@ -17,5 +17,5 @@ gulp.task "weinre", "Run a Weinre debugger server", ->
   #   cb(code)
 
   if +GLOBALS.OPEN_IN_BROWSER
-    open("http://#{weinreHost}:#{weinrePort}/client/#anonymous")
+    open("http://#{weinreHost}:#{weinrePort}/client/#anonymous", 'chromium')
     gutil.log gutil.colors.blue "Opening weinre debugger in the browser..."

@@ -16,7 +16,7 @@ window.addElement = (container, tagName, attrs = {}) ->
 
 
 # Debug helper
-window.log = -> console.log arguments
+window.log = -> console.log arguments...
 
 
 # ==> Add setObject and getObject methods to Storage prototype (used f.e. by localStorage).

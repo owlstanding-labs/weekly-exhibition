@@ -8,3 +8,7 @@
 
 /.envrc
 /npm-debug.log
+
+# for vim
+/node_modules/**/*
+/www/**/*

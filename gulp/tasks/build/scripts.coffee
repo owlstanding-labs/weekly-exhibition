@@ -24,7 +24,7 @@ gulp.task 'scripts:vendor', "Compile vendor js scripts to the ./#{GLOBALS.BUILD_
   gulp.src(PATHS.scripts.vendor)
 
     .pipe(sourcemaps.init())
-      .pipe(concat('vendor.js'))
+    .pipe(concat('vendor.js'))
       .pipe(gulpIf(!!+GLOBALS.COMPRESS_ASSETS, uglify(mangle: false)))
       .pipe(uploadSourcemapsToRollbar())
     .pipe(sourcemaps.write('./'))
@@ -36,6 +36,7 @@ gulp.task "scripts:app", "Compile ./app/js/*.js scripts to the ./#{GLOBALS.BUILD
   gulp.src(PATHS.scripts.app)
     .pipe((plumber (error) ->
       gutil.log gutil.colors.red(error.message)
+      gutil.log gutil.colors.red(error)
       @emit('end')
     ))
 

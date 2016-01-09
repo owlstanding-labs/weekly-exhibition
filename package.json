@@ -67,5 +67,8 @@
   "dependencies": {
     "extend": "^1.2.1",
     "gulp-util": "^2.2.14"
+  },
+  "devDependencies": {
+    "gulp-debug": "^2.1.2"
   }
 }

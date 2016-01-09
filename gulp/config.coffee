@@ -1,5 +1,6 @@
 gulp = require("gulp")
 gutil = require("gulp-util")
+debug = require("gulp-debug")
 extend = require("extend")
 exec = require("sync-exec")
 os = require("os")
@@ -102,6 +103,7 @@ module.exports = new class GulpConfig
         # (this way you can debug your application on your PC even if it's running from mobile ;) )
         WEINRE_ADDRESS: (GLOBALS) ->
           "#{GLOBALS.HTTP_SERVER_IP}:31173"
+          ''
       },
 
       production: {
@@ -171,7 +173,7 @@ module.exports = new class GulpConfig
       assets: ['assets/**', '!assets/**/*.ejs']
       assets_ejs: ['assets/**/*.ejs']
       watched_assets: ['assets/fonts/**', 'assets/images/**', 'assets/js/**', '!assets/*.ejs']
-      styles: ['app/css/**/*.scss']
+      styles: ['app/css/**/*.sass']
       scripts:
         vendor: [
           "assets/components/urijs/src/URI.js"
@@ -185,6 +187,7 @@ module.exports = new class GulpConfig
 
           # Here add any vendor files that should be included in vendor.js
           # (f.e. bower components)
+          "assets/components/angular-classy/angular-classy.js"
 
           # Google Analytics support (for both in-browser and Cordova app)
           "assets/components/angulartics/src/angulartics.js"

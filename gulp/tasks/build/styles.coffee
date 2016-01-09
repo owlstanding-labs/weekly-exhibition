@@ -15,11 +15,12 @@ gulp.task 'styles', "Compile ./app/css/*.sass stylesheets to ./#{GLOBALS.BUILD_D
     .pipe(changed(DESTINATIONS.styles, extension: '.css'))
     .pipe((plumber (error) ->
       gutil.log gutil.colors.red(error.message)
+      gutil.log error
       @emit('end')
     ))
 
     .pipe(sourcemaps.init())
-      .pipe(sass())
+      .pipe(sass(indentedSyntax: !0))
       .pipe(gulpIf(!!+GLOBALS.COMPRESS_ASSETS, minifyCSS(processImport: false)))
     .pipe(sourcemaps.write('./'))
 
