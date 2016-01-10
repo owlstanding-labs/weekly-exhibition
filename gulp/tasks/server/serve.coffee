@@ -15,6 +15,7 @@ gulp.task 'serve', "Run browser-sync server with livereload in ./#{GLOBALS.BUILD
     middlewares.push proxy(proxyOptions)
 
   browserSync({
+    browser: 'chromium'
     server:
       baseDir: GLOBALS.BUILD_DIR
       middleware: middlewares

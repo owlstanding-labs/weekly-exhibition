@@ -5,6 +5,10 @@ app.cC
 
   init: ->
     log 'appCtrl init'
+    @$.$on '$ionicView.beforeEnter', @_viewChange
 
   methods:
-    ok: -> ''
+    _viewChange: ->
+      log 'view changed'
+      if _.isFunction screen.lockOrientation
+        screen.lockOrientation('landscape')

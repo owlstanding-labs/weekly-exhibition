@@ -20,6 +20,9 @@ app.cC
       @$timeout =>
         @$.url = @$sce.trustAsResourceUrl url
 
+    curl: ->
+      @$.url or ''
+
     title: ->
       "Room #{@val.id}"
 

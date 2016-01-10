@@ -1,12 +1,12 @@
 {
-  "name": "ionic-cordova-gulp-seed",
-  "version": "2.4.0",
-  "description": "Ionic & Cordova & Gulp seed with organized code, tests, bower support and some other stuff. Originated from ionic-angular-cordova-seed.",
+  "name": "owlstand-weekly",
+  "version": "0.1.1",
+  "description": "Owlstand APP"
   "repository": {
     "type": "git",
     "url": "https://github.com/jtomaszewski/ionic-cordova-gulp-seed"
   },
-  "author": "jacek@jtom.me",
+  "author": ["stephen@owlstand.com", "nelson@owlstand.com"],
   "keywords": [
     "seed",
     "ionic",
