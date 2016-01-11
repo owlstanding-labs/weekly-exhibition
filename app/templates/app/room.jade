@@ -5,3 +5,8 @@ ion-view
       ng-src='{{curl()}}' frameborder='0' allowfullscreen)
     button.button.button-light(ng-click='prev()') Prev
     button.button.button-light(ng-click='next()') Next
+
+  ion-tabs.tabs-dark.tabs-icon-top
+    ion-tab(title='Prev' icon='ion-arrow-left-c')
+    ion-tab(title='Info' icon-on='ion-ios-information' icon-off='ion-ios-information-outline')
+    ion-tab(title='Next' icon='ion-arrow-right-c')
