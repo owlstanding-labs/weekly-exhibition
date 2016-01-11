@@ -8,9 +8,14 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     controller: 'appCtrl'
 
   s.state 'app.room',
-    url: '/:id'
+    url: '/room'
     templateUrl: 'templates/app/room.html'
     controller: 'appRoomCtrl'
+
+  s.state 'app.room.dzi',
+    url: '/:id'
+    templateUrl: 'templates/app/room/dzi.html'
+    controller: 'appRoomDziCtrl'
 
   # s.state 'app.second',
   #   url: 'second'

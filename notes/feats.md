@@ -9,6 +9,7 @@
 ## Operations
 
 - [x] Basic left/right room switches
+- [x] room tabs
 
 ## For devs
 
