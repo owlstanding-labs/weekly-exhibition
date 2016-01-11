@@ -36,4 +36,4 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
   #       templateUrl: "templates/pet-detail.html"
   #       controller: "PetDetailCtrl"
 
-  $urlRouterProvider.otherwise '/'
+  $urlRouterProvider.otherwise '/room'

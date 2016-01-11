@@ -7,14 +7,13 @@
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
     <name><%= BUNDLE_NAME %></name>
-    <description>
-      A sample ionic-cordova application.
-    </description>
-    <author email="jacek@jtom.me" href="http://jtom.me/">
-      Jacek Tomaszewski
+
+    <description> <%= BUNDLE_DESC %> </description>
+
+    <author email="<%= PUBLISHER_EMAIL %>" href="<%= PUBLISHER_URL %>">
+      <%= PUBLISHER %>
     </author>
 
-    <!-- This page will be shown at the beginning when the app is launched. -->
     <content src="index.html" />
 
     <!-- Security options -->
@@ -36,9 +35,9 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="KeyboardShrinksView" value="true" />
 
-    <!-- We will hide the splashscreen manually by JS when the app gets loaded -->
+    <preference name="orientation" value="landscape" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="20000" />
+    <preference name="AutoHideSplashScreen" value="true" />
 
     <!-- Fix error with "error while loading asset index.html" -->
     <preference name="LoadUrlTimeoutValue" value="70000" />
@@ -48,4 +47,17 @@
         <param name="ios-package" value="IonicKeyboard" onload="true" />
     </feature>
 
+    <platform name="ios">
+      <!-- images are determined by width and height. The following are supported -->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default~iphone.png" width="320" height="480"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default@2x~iphone.png" width="640" height="960"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-Portrait~ipad.png" width="768" height="1024"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-Landscape~ipad.png" width="1024" height="768"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-568h@2x~iphone.png" width="640" height="1136"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-667h.png" width="750" height="1334"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-736h.png" width="1242" height="2208"/>-->
+      <!--<splash src="platforms/ios/owlstand devDbg/Resources/splash/Default-Landscape-736h.png" width="2208" height="1242"/>-->
+    </platform>
 </widget>

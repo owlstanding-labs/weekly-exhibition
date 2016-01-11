@@ -4,6 +4,7 @@ app.cC
   inject: ['$scope', '$state', 'roomSrv']
   init: ->
     @srv = @roomSrv
+    @srv.next()
 
   methods:
     next: ->
@@ -11,3 +12,6 @@ app.cC
 
     prev: ->
       @srv.prev()
+
+    info: ->
+      log 'info'
