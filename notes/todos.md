@@ -10,3 +10,5 @@
 - configuartions
   - APP_NAME
   - cors issues(tweak proxy options in gulp/config.coffee)
+- replace gulp.env with yargs
+- log via angular

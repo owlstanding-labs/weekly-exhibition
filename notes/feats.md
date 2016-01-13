@@ -14,3 +14,4 @@
 ## For devs
 
 - [x] use chromium as dev environment
+- [x] js level modularized

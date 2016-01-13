@@ -9,7 +9,10 @@ app.cC
 
   methods:
     title: ->
-      "Room #{@val.id}"
+      if @val.entry.id?
+        @val.entry.name
+      else
+        'Loading...'
 
     url: ->
       @$._url
