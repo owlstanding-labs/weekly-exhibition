@@ -1,6 +1,5 @@
-app = angular.module(GLOBALS.ANGULAR_APP_NAME)
-
-
 # Useful for debugging, like `$a("$rootScope")`
-app.run ($window, $injector) ->
+angular.module(GLOBALS.ANGULAR_APP_NAME)
+.run ($window, $injector) ->
+  return if GLOBALS.ENV isnt 'development'
   $window.$a = $injector.get
