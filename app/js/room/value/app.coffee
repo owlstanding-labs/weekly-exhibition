@@ -9,3 +9,5 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     # '8ba7bacf-603c-4ae4-9b88-5521a29381dd'
   ]
   entry: {}
+  ui:
+    info: !1

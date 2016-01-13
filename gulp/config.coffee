@@ -14,7 +14,7 @@ module.exports = new class GulpConfig
         #  if we're running/emulating a --debug version of the cordova app)
         DEBUG: false
 
-        BUNDLE_VERSION: '0.2.0'
+        BUNDLE_VERSION: '0.3.0'
         BUNDLE_DESC: 'Owlstand Weekly Exhibitions App'
         PUBLISHER: 'Owlstand.com'
         PUBLISHER_EMAIL: 'admin@owlstand.com'

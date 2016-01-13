@@ -28,3 +28,10 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     # for animation
     $ionicViewSwitcher.nextDirection('back')
     @toRoom()
+
+  info: ->
+    ca = document.getElementsByTagName('iframe')[0]
+    ca.blur(30)
+    val.ui.info = !val.ui.info
+
+  hideInfo: ->
