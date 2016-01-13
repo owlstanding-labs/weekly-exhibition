@@ -188,6 +188,7 @@ module.exports = new class GulpConfig
           # Here add any vendor files that should be included in vendor.js
           # (f.e. bower components)
           'assets/components/angular-classy/angular-classy.js'
+          'assets/components/restangular/src/restangular.js'
 
           # Google Analytics support (for both in-browser and Cordova app)
           'assets/components/angulartics/src/angulartics.js'

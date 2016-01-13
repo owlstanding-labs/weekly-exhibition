@@ -1,7 +1,5 @@
-app = angular.module(GLOBALS.ANGULAR_APP_NAME)
-
-
-app.config ($ionicConfigProvider) ->
+angular.module(GLOBALS.ANGULAR_APP_NAME)
+.config ($ionicConfigProvider) ->
   # Customize navigation look
   # $ionicConfigProvider.backButton.icon('ion-ios7-arrow-back')
   # $ionicConfigProvider.backButton.text($translateProvider.instant("GO_BACK"))

@@ -1,7 +1,5 @@
-app = angular.module(GLOBALS.ANGULAR_APP_NAME)
-
-
-app.config ($httpProvider) ->
+angular.module(GLOBALS.ANGULAR_APP_NAME)
+.config ($httpProvider) ->
   # $httpProvider.defaults.useXDomain = true
   # delete $httpProvider.defaults.headers.common['X-Requested-With']
 

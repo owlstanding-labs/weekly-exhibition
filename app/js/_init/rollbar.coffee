@@ -1,12 +1,10 @@
 return unless window.Rollbar?
 app = angular.module(GLOBALS.ANGULAR_APP_NAME)
 
-
 app.factory '$exceptionHandler', ($log) ->
   (e, cause) ->
     $log.error e.message
     Rollbar.error(e)
-
 
 Rollbar.configure
   payload:
@@ -20,7 +18,6 @@ Rollbar.configure
       for frame in frames
         frame.filename = frame.filename.replace(GLOBALS.APP_ROOT, "#{GLOBALS.ROLLBAR_SOURCEMAPS_URL_PREFIX}/")
 
-
 app.run (Auth) ->
   Auth.on "user.updated", (user) ->
     Rollbar.configure
@@ -29,7 +26,6 @@ app.run (Auth) ->
           id: user.id
           email: user.email
         } if user)
-
 
 app.run (onRouteChangeCallback) ->
   onRouteChangeCallback (state) ->
