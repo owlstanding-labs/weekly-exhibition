@@ -1,12 +1,14 @@
 {
   "name": "owlstand-weekly",
-  "version": "0.1.1",
-  "description": "Owlstand APP"
+  "version": "0.4.1",
+  "description": "Owlstand Weekly Exhibitions",
   "repository": {
     "type": "git",
     "url": "https://github.com/jtomaszewski/ionic-cordova-gulp-seed"
   },
-  "author": ["stephen@owlstand.com", "nelson@owlstand.com"],
+  "author": [
+    "info@owlstand.com"
+  ],
   "keywords": [
     "seed",
     "ionic",
@@ -69,6 +71,7 @@
     "gulp-util": "^2.2.14"
   },
   "devDependencies": {
-    "gulp-debug": "^2.1.2"
+    "gulp-debug": "^2.1.2",
+    "lodash": "^4.0.0"
   }
 }

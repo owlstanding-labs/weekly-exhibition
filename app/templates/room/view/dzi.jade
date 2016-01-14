@@ -1,0 +1,9 @@
+ion-view(hide-nav-bar='phone')
+  //ion-nav-title {{ title() }}
+  ion-content.fill
+    iframe(width='100%' height='100%'
+      ng-src='{{ url() }}' ng-class='{blur: ui.info}'
+      frameborder='0' allowfullscreen)
+    .info(ng-if='ui.info' ng-click='hide()')
+      ion-content
+        .desc(ng-bind-html='d.description | sanitize')

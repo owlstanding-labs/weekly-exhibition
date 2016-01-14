@@ -1,3 +1,5 @@
+fs = require('fs')
+pkg = JSON.parse fs.readFileSync('./package.json')
 gulp = require('gulp')
 gutil = require('gulp-util')
 debug = require('gulp-debug')
@@ -14,7 +16,7 @@ module.exports = new class GulpConfig
         #  if we're running/emulating a --debug version of the cordova app)
         DEBUG: false
 
-        BUNDLE_VERSION: '0.2.0'
+        BUNDLE_VERSION: pkg.version
         BUNDLE_DESC: 'Owlstand Weekly Exhibitions App'
         PUBLISHER: 'Owlstand.com'
         PUBLISHER_EMAIL: 'admin@owlstand.com'
@@ -95,6 +97,7 @@ module.exports = new class GulpConfig
         # TESTFAIRY_TESTER_GROUPS: "IonicStarterTesters"
         TESTFAIRY_API_KEY: null
         TESTFAIRY_TESTER_GROUPS: null
+        API_HOST: 'http://staging.owlstand.com/api/v2'
       development:
         ENV: 'development'
         BUNDLE_ID: 'owlstand.dev'
@@ -115,6 +118,7 @@ module.exports = new class GulpConfig
         BUNDLE_ID: 'owlstand.weekly'
         BUNDLE_NAME: 'OwlstandWeekly'
         COMPRESS_ASSETS: true
+        API_HOST: 'https://owlstand.com/api/v2'
         # If those 2 variables are defined, the app will be deployed to the remote server after compiling the release.
         # ANDROID_DEPLOY_APPBIN_PATH: "deploy@ionicstarter.com:/u/apps/ionicstarter/shared/public/uploads/ionicstarter-production.apk"
         # ANDROID_DEPLOY_APPBIN_URL: "http://ionicstarter.com/uploads/ionicstarter-production.apk"
@@ -148,6 +152,7 @@ module.exports = new class GulpConfig
       'ROLLBAR_CLIENT_ACCESS_TOKEN'
       'ROLLBAR_SOURCEMAPS_URL_PREFIX'
       'WEINRE_ADDRESS'
+      'API_HOST'
     ]
 
     @_PUBLIC_GLOBALS_KEYS = @_PUBLIC_GLOBALS_KEYS.concat([
@@ -188,6 +193,7 @@ module.exports = new class GulpConfig
           # Here add any vendor files that should be included in vendor.js
           # (f.e. bower components)
           'assets/components/angular-classy/angular-classy.js'
+          'assets/components/restangular/src/restangular.js'
 
           # Google Analytics support (for both in-browser and Cordova app)
           'assets/components/angulartics/src/angulartics.js'

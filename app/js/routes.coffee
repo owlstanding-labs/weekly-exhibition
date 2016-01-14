@@ -4,18 +4,25 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
   s.state 'app',
     url: ''
     abstract: !0
-    templateUrl: 'templates/app.html'
+    templateUrl: 'templates/core/view/app.html'
     controller: 'appCtrl'
 
   s.state 'app.room',
     url: '/room'
-    templateUrl: 'templates/app/room.html'
-    controller: 'appRoomCtrl'
+    templateUrl: 'templates/room/view/_.html'
+    controller: 'roomCtrl'
+    resolve:
+      l0: (roomSrv, roomVal)->
+        return if roomVal.ids.length > 0
+        roomSrv.getList()
+      l1: (l0, roomSrv, roomVal)->
+        return if roomVal.entry.id?
+        roomSrv.toRoom()
 
   s.state 'app.room.dzi',
     url: '/:id'
-    templateUrl: 'templates/app/room/dzi.html'
-    controller: 'appRoomDziCtrl'
+    templateUrl: 'templates/room/view/dzi.html'
+    controller: 'roomDziCtrl'
 
   # s.state 'app.second',
   #   url: 'second'

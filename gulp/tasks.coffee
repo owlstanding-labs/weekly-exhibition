@@ -1,4 +1,5 @@
 require "./tasks/base/clean"
+require "./tasks/base/version"
 require "./tasks/base/bower-install"
 
 require "./tasks/build/assets"

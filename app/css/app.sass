@@ -8,9 +8,24 @@ body
 .fill .scroll
   height: 100%
 
+.info
+  position: relative
+  z-index: 300
+  height: 100%
+  background: transparentize(black, 0.3)
+.blur
+  position: absolute
+  top: 0
+  -webkit-filter: blur(8px)
+  z-index: 100
+.desc
+  text-align: justify
+  color: white
+  overflow-y: scroll
+  padding: 40px
+
 // room tabs
 .tab-low-active.tab-item-active
   opacity: 0.7
-
   &.activated
     opacity: 1
