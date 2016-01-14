@@ -12,7 +12,10 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     templateUrl: 'templates/room/view/_.html'
     controller: 'roomCtrl'
     resolve:
-      l1: (roomSrv, roomVal)->
+      l0: (roomSrv, roomVal)->
+        return if roomVal.ids.length > 0
+        roomSrv.getList()
+      l1: (l0, roomSrv, roomVal)->
         return if roomVal.entry.id?
         roomSrv.toRoom()
 

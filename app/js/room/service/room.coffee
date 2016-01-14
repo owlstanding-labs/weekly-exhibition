@@ -4,6 +4,8 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
   api = roomApiSrv
   nav = $ionicNavBarDelegate
 
+  getList: -> api.list()
+
   _idsLen: ->
     val.ids.length
 
@@ -14,7 +16,7 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
       delete val[x][k]
 
   toRoom: ->
-    nav.title 'loading...'
+    nav.title 'Loading...'
     id = val.ids[val.id]
     api.entry id, (r)->
       $state.go 'app.room.dzi', id: id

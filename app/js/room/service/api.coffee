@@ -7,3 +7,8 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     rest.all(api).get('').then (r)->
       _.extend val.entry, r
       f(r) if _.isFunction f
+  list: (kind = 'landing')->
+    api = 'landing/heros/list'
+    rest.all(api).get('', kind: kind).then (r)->
+      val.ids = r
+      log r
