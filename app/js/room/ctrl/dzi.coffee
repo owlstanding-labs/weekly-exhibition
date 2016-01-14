@@ -1,7 +1,7 @@
 app = angular.module(GLOBALS.ANGULAR_APP_NAME)
 app.cC
-  name: 'appRoomDziCtrl'
-  inject: ['$scope', '$sce', '$timeout', 'roomVal']
+  name: 'roomDziCtrl'
+  inject: ['$scope', '$sce', '$ionicNavBarDelegate', '$timeout', 'roomVal']
   data: ->
     ui: @roomVal.ui
     d: @roomVal.entry
@@ -9,21 +9,17 @@ app.cC
   init: ->
     log 'appRoomDziCtrl init'
     @val = @roomVal
+    @nav = @$ionicNavBarDelegate
     @$.$on '$ionicView.enter', @_ve
 
   methods:
-    title: ->
-      if @val.entry.id?
-        @val.entry.name
-      else
-        'Loading...'
-
     url: ->
       @$._url
 
     _ve: (e, v)->
       url = "https://owlstand.com/embed/#{v.stateParams.id}"
       @$timeout =>
+        @nav.title @val.entry.name
         @$._url = @$sce.trustAsResourceUrl url
 
     hide: ->

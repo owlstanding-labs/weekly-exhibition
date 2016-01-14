@@ -13,3 +13,5 @@
 - replace gulp.env with yargs
 - log via angular
 - To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+- collect LICENCES
+- clear .envrc

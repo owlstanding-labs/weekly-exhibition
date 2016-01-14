@@ -1,7 +1,8 @@
 angular.module(GLOBALS.ANGULAR_APP_NAME)
-.service 'roomSrv', ($timeout, $ionicViewSwitcher, $state, roomVal, roomApiSrv)->
+.service 'roomSrv', ($ionicNavBarDelegate, $timeout, $ionicViewSwitcher, $state, roomVal, roomApiSrv)->
   val = roomVal
   api = roomApiSrv
+  nav = $ionicNavBarDelegate
 
   _idsLen: ->
     val.ids.length
@@ -13,8 +14,9 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
       delete val[x][k]
 
   toRoom: ->
+    nav.title 'loading...'
     id = val.ids[val.id]
-    api.entry id, ->
+    api.entry id, (r)->
       $state.go 'app.room.dzi', id: id
 
   next: ->
@@ -33,5 +35,3 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     ca = document.getElementsByTagName('iframe')[0]
     ca.blur(30)
     val.ui.info = !val.ui.info
-
-  hideInfo: ->

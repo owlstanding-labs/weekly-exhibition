@@ -1,13 +1,18 @@
 app = angular.module(GLOBALS.ANGULAR_APP_NAME)
 app.cC
-  name: 'appRoomCtrl'
-  inject: ['$scope', '$state', 'roomSrv', 'roomApiSrv']
+  name: 'roomCtrl'
+  inject: ['$scope', '$timeout', 'roomSrv', '$ionicNavBarDelegate']
   init: ->
     @srv = @roomSrv
-    @api = @roomApiSrv
-    @srv.next()
+    @$.$on '$ionicView.enter', @_ve
 
   methods:
+    _ve: (e, v)->
+      # TODO: force hide
+      phone = navigator.platform isnt 'iPhone'
+      # phone = false
+      @$ionicNavBarDelegate.showBar(phone)
+
     next: ->
       @srv.next()
 
