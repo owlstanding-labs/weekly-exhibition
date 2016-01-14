@@ -17,4 +17,4 @@
 
 - [x] use chromium as dev environment
 - [x] js level modularized
-- [ ] version bump
+- [x] version bump
