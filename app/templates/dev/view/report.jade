@@ -1,0 +1,19 @@
+ion-view
+  ion-nav-title System Info
+  ion-content
+    .list.card
+      .item
+        | Session: {{ code }}
+        button.button.button-small.button-outline.button-positive(ng-click='send()')
+          | Report
+        a.button.button-small.button-outline.button-positive(href='#/room')
+          | Back
+        a.button.button-small.button-outline.button-positive(href='#/dev/offline')
+          | Offline
+    .list.card
+      .item
+        h3 Navigator
+      .item.item-body
+        .prop(ng-repeat='k in navKeys')
+          label {{ k }} -&nbsp;
+          span {{ navVal(k) }}

@@ -12,6 +12,16 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     templateUrl: 'templates/dev/view/_.html'
     controller: 'devCtrl'
 
+  s.state 'app.dev.offline',
+    url: '/offline'
+    templateUrl: 'templates/dev/view/offline.html'
+    controller: 'devOfflineCtrl'
+
+  s.state 'app.dev.report',
+    url: '/report'
+    templateUrl: 'templates/dev/view/report.html'
+    controller: 'devReportCtrl'
+
   s.state 'app.room',
     url: '/room'
     templateUrl: 'templates/room/view/_.html'

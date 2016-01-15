@@ -11,4 +11,3 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     api = 'landing/heros/list'
     rest.all(api).get('', kind: kind).then (r)->
       val.ids = r
-      log r

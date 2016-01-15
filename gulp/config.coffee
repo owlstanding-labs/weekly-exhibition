@@ -199,6 +199,7 @@ module.exports = new class GulpConfig
           'assets/components/angulartics/src/angulartics.js'
           'assets/components/angulartics/src/angulartics-ga-cordova-google-analytics-plugin.js'
           'assets/components/angulartics-google-analytics/lib/angulartics-google-analytics.js'
+          'assets/components/ngCordova/dist/ng-cordova.min.js'
         ]
         app: [
           'app/js/config/**/*.coffee' # initialize & configure the angular's app

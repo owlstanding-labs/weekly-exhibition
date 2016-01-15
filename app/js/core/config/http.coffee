@@ -17,9 +17,13 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     responseError: (response) ->
       $log.debug "httperror: ", response.status unless GLOBALS.ENV == "test"
 
+      if response.status is -1
+        $injector.invoke ($state)->
+          $state.go 'app.dev.offline'
+
       # Sign out current user if we receive a 401 status.
       if response.status == 401
-        $injector.invoke (Auth) ->
+        $injector.invoke (Auth)->
           Auth.setAuthToken(null, null)
           $location.path("/")
 
