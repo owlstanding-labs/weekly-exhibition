@@ -25,7 +25,7 @@ module.exports = new class GulpConfig
         AVAILABLE_PLATFORMS: ['ios'] # , "android"
 
         # The name of your angular app you're going to use in `angular.module("")`
-        ANGULAR_APP_NAME: 'ionicstarter'
+        ANGULAR_APP_NAME: 'app'
 
         # Base path to this project's directory. Generated automatically.
         APP_ROOT: exec('pwd').stdout.trim() + '/'

@@ -12,3 +12,6 @@ app.cC
       log 'view changed'
       if _.isFunction screen.lockOrientation
         screen.lockOrientation('landscape')
+
+    nonProd: ->
+      GLOBALS.ENV isnt 'production'

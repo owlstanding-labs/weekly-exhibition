@@ -5,6 +5,7 @@
 # else
 
 - log via angular
+- tester info reporter
 
 - collect LICENCES
 - clean up index.jade

@@ -7,6 +7,11 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     templateUrl: 'templates/core/view/app.html'
     controller: 'appCtrl'
 
+  s.state 'app.dev',
+    url: '/dev'
+    templateUrl: 'templates/dev/view/_.html'
+    controller: 'devCtrl'
+
   s.state 'app.room',
     url: '/room'
     templateUrl: 'templates/room/view/_.html'

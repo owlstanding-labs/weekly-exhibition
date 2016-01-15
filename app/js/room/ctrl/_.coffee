@@ -4,10 +4,14 @@ app.cC
   inject: ['$scope', '$timeout', 'roomSrv']
   init: ->
     @srv = @roomSrv
-    @$.phone = navigator.platform is 'iPhone'
+    @_checkPhone()
     @$.$on '$ionicView.enter', @_ve
 
   methods:
+    _checkPhone: ->
+      p = navigator.platform
+      @$.phone = (p is 'iPhone') or (p is 'iPod')
+
     _ve: (e, v)->
 
     next: ->
