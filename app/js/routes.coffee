@@ -30,8 +30,10 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
       l0: (roomSrv, roomVal)->
         return if roomVal.ids.length > 0
         roomSrv.getList()
-      l1: (l0, roomSrv, roomVal)->
-        return if roomVal.entry.id?
+      l1: (l0, $stateParams, roomSrv, roomVal)->
+        hasId = roomVal.entry.id?
+        sameId = roomVal.entry.id is $stateParams.id
+        return if hasId and sameId
         roomSrv.toRoom()
 
   s.state 'app.room.dzi',

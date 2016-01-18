@@ -20,6 +20,7 @@ angular.module(GLOBALS.ANGULAR_APP_NAME)
     id = val.ids[val.id]
     api.entry id, (r)->
       $state.go 'app.room.dzi', id: id
+    ''
 
   next: ->
     val.id = (val.id + 1) % @_idsLen()
